@@ -3,6 +3,8 @@
 import { useEffect, useRef } from "react";
 import { useScrollY } from "./hooks";
 
+const roundSvgCoordinate = (value: number) => Number(value.toFixed(6));
+
 /**
  * Continuous archival backdrop, fixed behind all content:
  *  · deep-space wash + vertical dossier grid lines
@@ -142,10 +144,10 @@ export default function Background() {
             return (
               <line
                 key={i}
-                x1={200 + Math.cos(a) * r1}
-                y1={200 + Math.sin(a) * r1}
-                x2={200 + Math.cos(a) * r2}
-                y2={200 + Math.sin(a) * r2}
+                x1={roundSvgCoordinate(200 + Math.cos(a) * r1)}
+                y1={roundSvgCoordinate(200 + Math.sin(a) * r1)}
+                x2={roundSvgCoordinate(200 + Math.cos(a) * r2)}
+                y2={roundSvgCoordinate(200 + Math.sin(a) * r2)}
                 stroke="rgba(214,164,90,0.22)"
                 strokeWidth={long ? 1 : 0.6}
               />

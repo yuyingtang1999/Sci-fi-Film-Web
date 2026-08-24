@@ -17,12 +17,19 @@ function Card({ p }: { p: Person }) {
     <figure className="group">
       <div className="relative aspect-[4/5] w-full overflow-hidden border border-[var(--line-2)] bg-[var(--panel)]">
         {p.photo ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={p.photo}
-            alt={p.name}
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-          />
+          <div className="h-full w-full transition-transform duration-500 group-hover:scale-[1.03]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={p.photo}
+              alt={p.name}
+              className="h-full w-full object-cover"
+              style={{
+                objectPosition: p.photoPosition ?? "50% 50%",
+                transform: `scale(${p.photoScale ?? 1})`,
+                transformOrigin: p.photoOrigin ?? "50% 50%",
+              }}
+            />
+          </div>
         ) : (
           <div className="flex h-full w-full items-center justify-center font-mono text-[1.5rem] tracking-[0.06em] text-[var(--amber)]">
             {initials(p.name)}
@@ -43,7 +50,7 @@ function Card({ p }: { p: Person }) {
         </NameTag>
         <p className="mt-1 text-[0.8rem] leading-snug text-[var(--muted)]">{p.role}</p>
         {p.affiliation && (
-          <p className="mt-1 font-mono text-[0.64rem] leading-snug tracking-[0.02em] text-[var(--faint)]">
+          <p className="mt-1 font-mono text-[0.64rem] leading-snug tracking-[0.02em] text-[var(--faint-strong)]">
             {p.affiliation}
           </p>
         )}
@@ -69,10 +76,19 @@ export default function People() {
         {GROUPS.map((g) => (
           <div key={g.id}>
             <Reveal>
-              <h3 className="mb-8 border-b border-[var(--line)] pb-3 font-display text-[1.05rem] font-semibold uppercase tracking-[0.04em] text-[var(--fg)]">
+              <h3 className={`${g.description ? "mb-5" : "mb-8"} border-b border-[var(--line)] pb-3 font-display text-[1.05rem] font-semibold uppercase tracking-[0.04em] text-[var(--fg)]`}>
                 {g.title}
               </h3>
             </Reveal>
+            {g.description && (
+              <Reveal>
+                <p className="lede mb-8">
+                  {g.description.prefix}
+                  <strong className="font-semibold text-[var(--fg)]">{g.description.emphasis}</strong>
+                  {g.description.suffix}
+                </p>
+              </Reveal>
+            )}
             <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
               {g.people.map((p, i) => (
                 <Reveal key={p.name} delay={(i % 5) * 50}>

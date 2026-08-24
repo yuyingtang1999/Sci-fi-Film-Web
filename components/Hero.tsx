@@ -2,19 +2,19 @@
 
 export default function Hero() {
   return (
-    <section id="top" className="relative z-10 flex min-h-[100svh] flex-col justify-between px-[var(--gutter)] pt-24 pb-8">
+    <section id="top" className="relative z-10 flex min-h-[100svh] flex-col px-[var(--gutter)] pt-24 pb-8">
       <div className="mx-auto w-full max-w-[var(--maxw)]">
         <div className="border-b border-[var(--line)] pb-3">
-          <span className="code">Human–AI Co-Creation Workshop</span>
+          <span className="code">Science × Art × AI Global Co-Creation Initiative</span>
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-[var(--maxw)]">
+      <div className="mx-auto mt-[clamp(0.333rem,0.667vh,0.5rem)] w-full max-w-[var(--maxw)]">
         <p className="code mb-6 flex items-center gap-3">
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--amber)]" style={{ animation: "flick 4s ease-in-out infinite" }} />
-          Research-Led Interdisciplinary Workshop
+          Science × Art × AI Global Co-Creation Initiative
         </p>
-        <h1 className="display display-xl max-w-[16ch]">
+        <h1 className="display display-xl max-w-none" style={{ lineHeight: 0.9 }}>
           Human–AI Co-Creation<br />
           for <span className="text-[var(--amber)]">Science Fiction</span><br />
           Filmmaking
@@ -24,7 +24,7 @@ export default function Hero() {
         </p>
       </div>
 
-      <div className="mx-auto w-full max-w-[var(--maxw)]">
+      <div className="mx-auto mt-[clamp(2.25rem,5vh,3.5rem)] w-full max-w-[var(--maxw)]">
         <div className="flex items-end justify-between border-t border-[var(--line)] pt-3">
           <span className="code">Science · Cinema · Imagination · AI</span>
           <button

@@ -15,7 +15,10 @@ export default function Vision() {
             <br />
             <span className="text-[var(--amber)]">Tell the Story.</span>
           </h2>
-          <p className="mt-10 font-mono text-[0.72rem] uppercase tracking-[0.22em] text-[var(--muted)]">
+          <p className="mt-10 font-mono text-[0.72rem] tracking-[0.14em] text-[var(--muted)]">
+            London · Hong Kong · Beijing · Shanghai · United States · More Cities Coming Soon
+          </p>
+          <p className="mt-4 font-mono text-[0.72rem] uppercase tracking-[0.22em] text-[var(--muted)]">
             Science · Cinema · Imagination · Artificial Intelligence
           </p>
         </Reveal>
