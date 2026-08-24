@@ -10,10 +10,6 @@ export default function Hero() {
       </div>
 
       <div className="mx-auto mt-[clamp(0.333rem,0.667vh,0.5rem)] w-full max-w-[var(--maxw)]">
-        <p className="code mb-6 flex items-center gap-3">
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--amber)]" style={{ animation: "flick 4s ease-in-out infinite" }} />
-          Science × Art × AI Global Co-Creation Initiative
-        </p>
         <h1 className="display display-xl max-w-none" style={{ lineHeight: 0.9 }}>
           Human–AI Co-Creation<br />
           for <span className="text-[var(--amber)]">Science Fiction</span><br />

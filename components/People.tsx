@@ -50,7 +50,7 @@ function Card({ p }: { p: Person }) {
         </NameTag>
         <p className="mt-1 text-[0.8rem] leading-snug text-[var(--muted)]">{p.role}</p>
         {p.affiliation && (
-          <p className="mt-1 font-mono text-[0.64rem] leading-snug tracking-[0.02em] text-[var(--faint-strong)]">
+          <p className="mt-1 font-mono text-[0.64rem] leading-snug tracking-[0.02em] text-[var(--amber)]">
             {p.affiliation}
           </p>
         )}
@@ -65,7 +65,7 @@ export default function People() {
       <div className="border-t border-[var(--line)] pt-3" />
 
       <Reveal className="mt-12">
-        <h2 className="h-sec max-w-[18ch]">The minds behind the workshop</h2>
+        <h2 className="h-sec max-w-[18ch]">The Minds Behind the Initiative</h2>
         <p className="lede mt-5">
           An interdisciplinary community spanning artificial intelligence, science,
           film, media, art, and design.
