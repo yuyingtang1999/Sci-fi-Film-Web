@@ -39,7 +39,7 @@ function Card({ p }: { p: Person }) {
         <span className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-[rgba(214,164,90,0.06)]" />
       </div>
 
-      <figcaption className="mt-3">
+      <figcaption className="mt-2.5 sm:mt-3">
         <NameTag {...nameProps}>
           {p.name}
           {p.link && (
@@ -48,9 +48,9 @@ function Card({ p }: { p: Person }) {
             </svg>
           )}
         </NameTag>
-        <p className="mt-1 text-[0.8rem] leading-snug text-[var(--muted)]">{p.role}</p>
+        <p className="mt-1 text-[0.72rem] leading-snug text-[var(--muted)] sm:text-[0.8rem]">{p.role}</p>
         {p.affiliation && (
-          <p className="mt-1 font-mono text-[0.64rem] leading-snug tracking-[0.02em] text-[var(--amber)]">
+          <p className="mt-1 font-mono text-[0.58rem] leading-snug tracking-[0.01em] text-[var(--amber)] sm:text-[0.64rem] sm:tracking-[0.02em]">
             {p.affiliation}
           </p>
         )}
@@ -64,7 +64,7 @@ export default function People() {
     <section id="people" className="section relative z-10 mx-auto max-w-[var(--maxw)] px-[var(--gutter)]">
       <div className="border-t border-[var(--line)] pt-3" />
 
-      <Reveal className="mt-12">
+      <Reveal className="mt-9 sm:mt-12">
         <h2 className="h-sec max-w-[18ch]">The Minds Behind the Initiative</h2>
         <p className="lede mt-5">
           An interdisciplinary community spanning artificial intelligence, science,
@@ -72,7 +72,7 @@ export default function People() {
         </p>
       </Reveal>
 
-      <div className="mt-16 space-y-16">
+      <div className="mt-12 space-y-12 sm:mt-16 sm:space-y-16">
         {GROUPS.map((g) => (
           <div key={g.id}>
             <Reveal>
@@ -89,7 +89,7 @@ export default function People() {
                 </p>
               </Reveal>
             )}
-            <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
+            <div className="grid grid-cols-2 gap-x-4 gap-y-9 sm:grid-cols-3 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-5">
               {g.people.map((p, i) => (
                 <Reveal key={p.name} delay={(i % 5) * 50}>
                   <Card p={p} />

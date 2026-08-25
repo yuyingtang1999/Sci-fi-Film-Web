@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo, Cinzel, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Archivo, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
 const display = Archivo({
@@ -20,12 +20,6 @@ const mono = IBM_Plex_Mono({
   variable: "--font-mono",
   display: "swap",
 });
-const roman = Cinzel({
-  subsets: ["latin"],
-  weight: ["500", "600"],
-  variable: "--font-roman",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Human–AI Co-Creation for Science Fiction Filmmaking",
@@ -35,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${sans.variable} ${mono.variable} ${roman.variable}`}>
+    <html lang="en" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
       <body>{children}</body>
     </html>
   );

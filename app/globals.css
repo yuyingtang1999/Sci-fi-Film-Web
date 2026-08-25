@@ -142,6 +142,15 @@ body::after {
 
 .section { padding-block: clamp(72px, 12vh, 150px); }
 
+@media (max-width: 639px) {
+  :root { --gutter: clamp(16px, 5vw, 24px); }
+  .section { padding-block: clamp(56px, 9vh, 88px); }
+  .display-xl { font-size: clamp(2.15rem, 11vw, 3.6rem); }
+  .display-lg { font-size: clamp(2rem, 10vw, 3rem); }
+  .h-sec { font-size: clamp(1.5rem, 7.5vw, 2rem); }
+  .lede { font-size: 0.96rem; line-height: 1.58; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
   html { scroll-behavior: auto; }

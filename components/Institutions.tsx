@@ -43,19 +43,19 @@ export default function Institutions() {
       </Reveal>
 
       {/* All logos sit directly on one large light-gold panel. */}
-      <Reveal className="mt-12">
-        <div className="rounded-2xl bg-[#ece1c2] p-7 sm:p-10">
+      <Reveal className="mt-9 sm:mt-12">
+        <div className="rounded-xl bg-[#ece1c2] p-4 sm:rounded-2xl sm:p-10">
           {/* Five primary institutions — first row, larger */}
-          <div className="grid grid-cols-2 items-start gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="grid grid-cols-2 items-start gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-8 sm:gap-y-10 lg:grid-cols-5">
             {featured.map((inst) => (
               <Logo key={inst.name} inst={inst} featured />
             ))}
           </div>
 
-          <div className="my-8 h-px w-full bg-[rgba(0,0,0,0.08)]" />
+          <div className="my-6 h-px w-full bg-[rgba(0,0,0,0.08)] sm:my-8" />
 
           {/* Remaining institutions — six per row */}
-          <div className="grid grid-cols-2 items-start gap-x-6 gap-y-9 sm:grid-cols-4 lg:grid-cols-6">
+          <div className="grid grid-cols-2 items-start gap-x-4 gap-y-8 sm:grid-cols-4 sm:gap-x-6 sm:gap-y-9 lg:grid-cols-6">
             {rest.map((inst) => (
               <Logo key={inst.name} inst={inst} featured={false} />
             ))}

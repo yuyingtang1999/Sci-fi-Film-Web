@@ -36,7 +36,7 @@ export default function NavBar() {
     >
       <nav className="mx-auto flex max-w-[var(--maxw)] items-center justify-between px-[var(--gutter)] py-3.5">
         <button onClick={() => go("top")} className="group flex items-center gap-3 text-left">
-          <span className="font-mono text-[0.74rem] font-medium uppercase tracking-[0.14em] text-[var(--fg)]">
+          <span className="font-mono text-[0.66rem] font-medium uppercase tracking-[0.1em] text-[var(--fg)] sm:text-[0.74rem] sm:tracking-[0.14em]">
             Human–AI Co-Creation
           </span>
         </button>
@@ -57,6 +57,7 @@ export default function NavBar() {
             className="flex h-8 w-8 items-center justify-center border border-[var(--line-2)] md:hidden"
             onClick={() => setOpen((o) => !o)}
             aria-label="Menu"
+            aria-expanded={open}
           >
             <div className="space-y-[3px]">
               <span className="block h-px w-4 bg-[var(--fg)]" />
