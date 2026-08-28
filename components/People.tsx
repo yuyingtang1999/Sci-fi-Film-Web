@@ -27,6 +27,7 @@ function Card({ p }: { p: Person }) {
                 objectPosition: p.photoPosition ?? "50% 50%",
                 transform: `scale(${p.photoScale ?? 1})`,
                 transformOrigin: p.photoOrigin ?? "50% 50%",
+                filter: p.photoFilter,
               }}
             />
           </div>
