@@ -10,7 +10,6 @@ export interface Person {
   photoScale?: number;
   photoPosition?: string;
   photoOrigin?: string;
-  photoFilter?: string;
 }
 
 export interface Group {
@@ -32,7 +31,7 @@ export const GROUPS: Group[] = [
     code: "A",
     people: [
       { name: "Stanley Tong", role: "Internationally Acclaimed Film Director, Producer & Action Choreographer · Hong Kong Film Award–Winning Filmmaker", affiliation: "", link: "https://en.wikipedia.org/wiki/Stanley_Tong", photo: "images/people/stanley-tong-2026.webp?v=10", photoPosition: "50% 48%" },
-      { name: "Yan Wu", role: "Pioneer of Science-Fiction Education in China · Director, Science and Human Imagination Research Center · Award-Winning Science-Fiction Writer & Professor", affiliation: "Southern University of Science and Technology", link: "https://www.sustech.edu.cn/en/faculties/wuyan-2.html", photo: "images/people/wu-yan-2026.webp?v=12", photoScale: 1.28, photoPosition: "50% 50%", photoOrigin: "50% 18%", photoFilter: "brightness(1.01) sepia(0.06) saturate(1.02) contrast(0.98)" },
+      { name: "Yan Wu", role: "Pioneer of Science-Fiction Education in China · Director, Science and Human Imagination Research Center · Award-Winning Science-Fiction Writer & Professor", affiliation: "Southern University of Science and Technology", link: "https://www.sustech.edu.cn/en/faculties/wuyan-2.html", photo: "images/people/yan-wu-site-amber.webp?v=14" },
       { name: "Shengyi Ye", role: "Former Lead Scientist, NASA Cassini Data Analysis Program · Guangdong Pearl River Leading Talent · Professor of Planetary & Space Sciences", affiliation: "Southern University of Science and Technology", link: "https://www.sustech.edu.cn/en/faculties/yeshengyi.html", photo: "images/people/shengyi-ye.jpg?v=8" },
       { name: "Zhigang Wang", role: "Chair, Department of Information Art & Design, Founding Director, Tsinghua Academy of New Media Performance Innovation · Tenured Professor", affiliation: "Tsinghua University", link: "https://www.enad.tsinghua.edu.cn/info/1229/1363.htm", photo: "images/people/zhigang-wang.jpg?v=8" },
       { name: "Zhonghua Yao", role: "President, Planetary Sciences Section, Asia Oceania Geosciences Society · NASA Cassini Group Achievement Award Recipient · Associate Professor of Planetary Sciences", affiliation: "The University of Hong Kong", link: "https://www.earthsciences.hku.hk/people/academic-staff/dr-yao-zhonghua", photo: "images/people/zhonghua-yao.jpg?v=9" },
