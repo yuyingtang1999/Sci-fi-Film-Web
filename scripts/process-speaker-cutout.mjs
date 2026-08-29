@@ -1,6 +1,6 @@
 import sharp from "sharp";
 
-const [sourcePath, outputPath, subjectHeightArg = "2350", topArg = "55", leftArg = "0"] = process.argv.slice(2);
+const [sourcePath, outputPath, subjectHeightArg = "2350", topArg = "85", leftArg = "45"] = process.argv.slice(2);
 if (!sourcePath || !outputPath) {
   throw new Error("Usage: node scripts/process-speaker-cutout.mjs <source> <output> [subjectHeight] [top] [left]");
 }
