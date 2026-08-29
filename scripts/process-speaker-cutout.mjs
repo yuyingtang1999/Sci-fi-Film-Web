@@ -1,6 +1,6 @@
 import sharp from "sharp";
 
-const [sourcePath, outputPath, subjectHeightArg = "1500", topArg = "60", leftArg = "0"] = process.argv.slice(2);
+const [sourcePath, outputPath, subjectHeightArg = "2350", topArg = "55", leftArg = "0"] = process.argv.slice(2);
 if (!sourcePath || !outputPath) {
   throw new Error("Usage: node scripts/process-speaker-cutout.mjs <source> <output> [subjectHeight] [top] [left]");
 }
@@ -12,7 +12,11 @@ const top = Number(topArg);
 const leftOffset = Number(leftArg);
 const background = { r: 18, g: 14, b: 9, alpha: 1 };
 
-const trimmed = await sharp(sourcePath)
+const sourceMetadata = await sharp(sourcePath).metadata();
+const croppedSource = sourceMetadata.width === 1024 && sourceMetadata.height === 1536
+  ? await sharp(sourcePath).extract({ left: 180, top: 80, width: 760, height: 1456 }).png().toBuffer()
+  : await sharp(sourcePath).png().toBuffer();
+const trimmed = await sharp(croppedSource)
   .trim({ background: { r: 0, g: 0, b: 0, alpha: 0 } })
   .png()
   .toBuffer();
