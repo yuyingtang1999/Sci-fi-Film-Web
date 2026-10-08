@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
   pages: write
   id-token: write
 
@@ -52,6 +53,27 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # Legacy Pages builds publish the repository README. Ensure they finish
+      # before publishing the exported Next.js site for the same commit.
+      - name: Wait for competing legacy Pages build
+        uses: actions/github-script@v7
+        with:
+          script: |
+            for (let attempt = 0; attempt < 60; attempt++) {
+              const { data } = await github.rest.actions.listWorkflowRunsForRepo({
+                ...context.repo,
+                head_sha: context.sha,
+                per_page: 100,
+              });
+              const legacyRuns = data.workflow_runs.filter(run =>
+                run.name === 'pages build and deployment'
+              );
+              if (legacyRuns.length && legacyRuns.every(run => run.status === 'completed')) return;
+              // Allow delayed legacy scheduling; Actions-only repositories have none.
+              if (!legacyRuns.length && attempt >= 5) return;
+              await new Promise(resolve => setTimeout(resolve, 10000));
+            }
+            core.setFailed('Legacy Pages build is still active; refusing to race its deployment.');
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
