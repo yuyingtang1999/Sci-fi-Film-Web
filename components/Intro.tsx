@@ -65,33 +65,7 @@ export default function Intro() {
             </div>
 
             <div className="lg:col-span-6 lg:col-start-7">
-              <p className="font-mono text-[0.68rem] uppercase tracking-[0.2em] text-[var(--amber)]">
-                Imagination Protocol
-              </p>
-              <p className="mt-3 max-w-[58ch] leading-relaxed text-[var(--muted)]">
-                Bold imagination is encouraged, while every idea must clearly
-                distinguish among three kinds of content:
-              </p>
-
-              <ol className="mt-6 grid gap-3">
-                {[
-                  "Existing scientific research",
-                  "Scientifically plausible speculation",
-                  "Fictional elements introduced for narrative purposes",
-                ].map((item, index) => (
-                  <li
-                    key={item}
-                    className="grid grid-cols-[2.25rem_1fr] items-start gap-3 border-t border-[var(--line)] pt-3"
-                  >
-                    <span className="font-mono text-sm text-[var(--amber)]">
-                      0{index + 1}
-                    </span>
-                    <span className="text-[var(--fg)]">{item}</span>
-                  </li>
-                ))}
-              </ol>
-
-              <div className="mt-8 border-l border-[var(--amber)] pl-5">
+              <div className="border-l border-[var(--amber)] pl-5">
                 <p className="font-mono text-[0.68rem] uppercase tracking-[0.2em] text-[var(--amber)]">
                   Scenario / 2050
                 </p>
