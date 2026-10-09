@@ -133,8 +133,9 @@ body::after {
 }
 .dlink:hover { color: var(--amber-bright); background-size: 100% 1px; }
 
-/* Content must remain readable if client scripts or reveal observers fail. */
+/* Keep server-rendered content visible until its scroll observer is ready. */
 .reveal { opacity: 1; transform: none; }
+.reveal.reveal-ready { opacity: 0; transform: translateY(16px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
 .reveal.in { opacity: 1; transform: none; }
 
 @keyframes spinSlow { to { transform: rotate(360deg); } }
@@ -155,5 +156,5 @@ body::after {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
   html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; }
+  .reveal, .reveal.reveal-ready { opacity: 1; transform: none; }
 }

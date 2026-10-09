@@ -11,11 +11,11 @@ export default function Reveal({
   className?: string;
   delay?: number;
 }) {
-  const [ref, shown] = useReveal<HTMLDivElement>();
+  const [ref, shown, ready] = useReveal<HTMLDivElement>();
   return (
     <div
       ref={ref}
-      className={`reveal ${shown ? "in" : ""} ${className}`}
+      className={`reveal ${ready ? "reveal-ready" : ""} ${shown ? "in" : ""} ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
