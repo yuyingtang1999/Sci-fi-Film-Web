@@ -60,8 +60,24 @@ export default function Intro() {
               <p className="mt-6 max-w-[42ch] text-[clamp(1rem,1.3vw,1.12rem)] leading-relaxed text-[var(--muted)]">
                 Co-create with AI to develop a creative proposal for a five-minute
                 science-fiction short film about extraterrestrial life on
-                Jupiter&apos;s icy moons.
+                Jupiter’s icy moons.
               </p>
+              <p className="mt-6 max-w-[52ch] leading-relaxed text-[var(--muted)]">
+                You may use bold imagination, but you must clearly distinguish
+                among the following three types of content:
+              </p>
+              <ol className="mt-4 grid gap-3 text-[var(--muted)]">
+                {[
+                  "Content based on existing scientific research;",
+                  "Scientifically plausible speculation;",
+                  "Fictional elements introduced for narrative purposes.",
+                ].map((item, index) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="font-mono text-[var(--amber)]">({index + 1})</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ol>
             </div>
 
             <div className="lg:col-span-6 lg:col-start-7">
@@ -70,11 +86,19 @@ export default function Intro() {
                   Scenario / 2050
                 </p>
                 <p className="mt-3 max-w-[60ch] leading-relaxed text-[var(--muted)]">
-                  Human probes studying Jupiter and its icy moons detect an
-                  anomalous signal. It may arise from energetic interactions among
-                  Jupiter&apos;s intense magnetic field, the solar wind, and material
-                  from its moons—or from potential biological activity in a
-                  subsurface ocean.
+                  The story is set in the Jupiter system in 2050.
+                </p>
+                <p className="mt-4 max-w-[60ch] leading-relaxed text-[var(--muted)]">
+                  Human probes or space missions are studying Jupiter and its icy
+                  moons. During a new exploration mission to the Jupiter system,
+                  researchers detect an anomalous signal.
+                </p>
+                <p className="mt-4 max-w-[60ch] leading-relaxed text-[var(--muted)]">
+                  It may originate from energetic activity caused by interactions
+                  among Jupiter’s intense magnetic field, the solar wind, and
+                  material from its moons, or it may be related to potential
+                  biological activity in the subsurface ocean of one of Jupiter’s
+                  icy moons. . .
                 </p>
               </div>
             </div>
