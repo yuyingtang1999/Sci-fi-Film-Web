@@ -57,12 +57,16 @@ export default function Intro() {
               <h3 className="mt-4 max-w-[13ch] font-display text-[clamp(2rem,4.2vw,3.6rem)] font-semibold leading-[1.02] tracking-[-0.025em] text-[var(--fg)]">
                 Extraterrestrial Life on Jupiter&apos;s Icy Moons in 2050
               </h3>
-              <p className="mt-6 max-w-[42ch] text-[clamp(1rem,1.3vw,1.12rem)] leading-relaxed text-[var(--muted)]">
+
+            </div>
+
+            <div className="lg:col-span-6 lg:col-start-7">
+              <p className="max-w-[60ch] text-[clamp(1rem,1.3vw,1.12rem)] leading-relaxed text-[var(--muted)]">
                 Co-create with AI to develop a creative proposal for a five-minute
                 science-fiction short film about extraterrestrial life on
                 Jupiter’s icy moons.
               </p>
-              <p className="mt-6 max-w-[52ch] leading-relaxed text-[var(--muted)]">
+              <p className="mt-6 max-w-[60ch] leading-relaxed text-[var(--muted)]">
                 You may use bold imagination, but you must clearly distinguish
                 among the following three types of content:
               </p>
@@ -78,10 +82,7 @@ export default function Intro() {
                   </li>
                 ))}
               </ol>
-            </div>
-
-            <div className="lg:col-span-6 lg:col-start-7">
-              <div className="border-l border-[var(--amber)] pl-5">
+              <div className="mt-8 border-l border-[var(--amber)] pl-5">
                 <p className="font-mono text-[0.68rem] uppercase tracking-[0.2em] text-[var(--amber)]">
                   Scenario / 2050
                 </p>
